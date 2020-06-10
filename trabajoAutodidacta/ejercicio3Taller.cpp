@@ -3,18 +3,10 @@
 int n1,m1,n2,m2;
 int **matriz1,**matriz2,**matriz3;
 using namespace std;
-void multiplicacion()
-{	for(int i=0;i<n1;i++)
-	{	for(int j=0;j<m2;j++)
-		{	for(int z=0;z<n2;z++)
-			{ 	matriz3[i][j]+=matriz1[i][z]*matriz2[z][j];
-					
-			}	
-		}
-		
-	}
-	cout<<"ENTREOOOO SIII";
-}
+//void multiplicacion()
+//{	
+//
+//}
 int main(int argc, char** argv) {
 	//Esta es la primera matriz
 	cout<<"Escribir el numero de filas de la primera matriz: ";
@@ -65,11 +57,21 @@ int main(int argc, char** argv) {
 	}
 
 	
-	multiplicacion();
+//	multiplicacion();
+	for(int i=0;i<n1;i++)
+	{	for(int j=0;j<m2;j++)
+		{	for(int z=0;z<n2;z++)
+			{ 	matriz3[i][j]+=matriz1[i][z]*matriz2[z][j];
+				cout<<"Este el valor de la matriz"<<matriz3[i][j]<<endl;	
+			}	
+		}
+		
+	}
 	//	mostrar el resultado
 	for(int i=0;i<n2;i++)
 	{	for(int j=0;j<m2;j++)
 		{	cout<<*(*(matriz3+i)+j);
+			cout<<"entro";
 		}
 	}
 	return 0;
