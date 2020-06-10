@@ -4,7 +4,7 @@ int *vector1,*vector2,*vector3,*vector4,*vector5;
 using namespace std;
 void evaluar(int *vector,int n)
 {	int i=0;
-	for(i=0;i<=n;i++)
+	for(i=0;i<n;i++)
 	{
 		if(vector[i]>=3)
 		{
@@ -22,7 +22,7 @@ void llenar(int *vector,int n)
 {	cout<<"Valor a llenar las notas de un estudiantes "<<endl;
 	for(int i=0;i<n;i++)
 	{	cout<<"Valor posicion "<<i<<":";
-		cin>>vector1[i];
+		cin>>vector[i];
 	}
 }
 int main(int argc, char** argv) {
