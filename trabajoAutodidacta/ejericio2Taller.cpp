@@ -13,13 +13,13 @@ void evaluar(int *vector,int n)
 			perder++;
 		}
 	}
-	ganar=ganar-1;
+	
 	
 	
 	
 }
 void llenar(int *vector,int n)
-{
+{	cout<<"Valor a llenar las notas de un estudiantes "<<endl;
 	for(int i=0;i<n;i++)
 	{	cout<<"Valor posicion "<<i<<":";
 		cin>>vector1[i];
@@ -44,7 +44,7 @@ int main(int argc, char** argv) {
 	evaluar(vector4,n);
 	evaluar(vector5,n);
 	
-	cout<<"Estos son los que ganaron : "<<ganar;
+	cout<<"Estos son los que ganaron : "<<ganar<<endl;
 	cout<<"Estos son los que perdieron: "<<perder;
 	return 0;
 }
