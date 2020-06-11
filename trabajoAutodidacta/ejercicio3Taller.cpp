@@ -3,6 +3,7 @@
 #include <vector>
 int n1,m1,n2,m2;
 int **matriz1,**matriz2,**matriz3;
+
 using namespace std;
 
 void llenar(int **matriz,int n,int m)
@@ -15,15 +16,15 @@ void llenar(int **matriz,int n,int m)
 	{	
 		for(int j=0;j<m;j++)
 		{	cout<<"Escriba el valor en la posicion ["<<i<<"]["<<j<<"]: ";
-			cin>>matriz[i][j];
+			cin>>*(*(matriz+i)+j);
 		}
 	}
 }
 void mostrar(int **matriz,int n,int m)
-{	cout<<"Este es el primer valor de la matriz "<<matriz[0][0];
+{	
 	for(int i=0;i<n;i++)
 	{	for(int j=0;j<m;j++)
-		{	cout<<matriz[i][j]<<" ";
+		{	cout<<*(*(matriz+i)+j)<<" ";
 			cout<<"Entro en el bucle";
 		}
 		cout<<endl;
@@ -48,13 +49,10 @@ int main(int argc, char** argv) {
 	cin>>m1;
 	llenar(matriz1,n1,m1);
 	mostrar(matriz1,n1,m1);
-
-//	cout<<"Escribir el numero de filas de la matriz: ";
-//	cin>>n2;
-//	cout<<"Escribir el numero de columnas de la  matriz: ";
-//	cin>>m2;
-//	llenar(matriz2,n2,m2);
 	
+//	mostrar(matriz1,n1,m1);
+
+
 
 	return 0;
 }
