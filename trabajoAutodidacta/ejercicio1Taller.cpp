@@ -37,12 +37,15 @@ void ordenar(int *vector,int *vectorFinal,int n)
 }
 void ordenamiento(int *vectorFinal,int n)
 {	int k,i,aux;
-	for(i=1;i<j-1;i++)
-	{	for(k=i+1;j;k++)
-		{	if(vectorFinal[i]>vectorFinal[k])
+	cout<<"Este es el valor de j "<<j;
+	for(i=0;i<j-1;i++)
+	{	
+		for(k=1;j;k++)
+		{	if(vectorFinal[k]>vectorFinal[k+1])
 			{	aux=vectorFinal[k];
-				vectorFinal[i]=vectorFinal[k];
-				vectorFinal[k]=aux;
+				vectorFinal[k]=vectorFinal[k+1];
+				vectorFinal[k+1]=aux;
+				
 			}
 			
 		}
@@ -58,7 +61,7 @@ int main(int argc, char** argv) {
 	
 	llenar(vector,n);
 	ordenar(vector,vectorFinal,n);
-	mostrar(vectorFinal,n);
+//	mostrar(vectorFinal,n);
 	cout<<"Este el valor de j :"<<j;
 	
 	ordenamiento(vectorFinal,n);
