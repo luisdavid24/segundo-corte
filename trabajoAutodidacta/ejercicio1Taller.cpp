@@ -1,5 +1,5 @@
 #include <iostream>
-int n,indice,j;
+int n,indice;
 int *vector,*vectorFinal;
 using namespace std;
 void llenar(int *vector,int n)
@@ -17,7 +17,7 @@ void mostrar(int *vector,int n)
 
 void ordenar(int *vector,int *vectorFinal,int n)
 {	int i,k,aux;
-	j=0;
+	int j=0;
 	for(i=0;i<n;i++)
 	{	if(vector[i]%2==0)	
 		{	vectorFinal[j]=vector[i];
@@ -25,6 +25,7 @@ void ordenar(int *vector,int *vectorFinal,int n)
 		}
 		
 	}
+	
 	
 	k=j;
 	for(i=0;i<n;i++)
@@ -35,23 +36,26 @@ void ordenar(int *vector,int *vectorFinal,int n)
 		
 	}
 }
-void ordenamiento(int *vectorFinal,int n)
-{	int k,i,aux;
-	cout<<"Este es el valor de j "<<j;
-	for(i=0;i<j-1;i++)
-	{	
-		for(k=1;j;k++)
-		{	if(vectorFinal[k]>vectorFinal[k+1])
-			{	aux=vectorFinal[k];
-				vectorFinal[k]=vectorFinal[k+1];
-				vectorFinal[k+1]=aux;
-				
+void ordenamiento(int *vector,int n)
+{	int aux;
+	for(int i=0;i<n;i++)
+	{	for(int j=0;j<n-1;j++)
+		{	if(vector[j]>vector[j+1])
+			{	aux=vector[j];
+				vector[j]=vector[j+1];
+				vector[j+1]=aux;
 			}
-			
 		}
-		
 	}
-	
+	for(int i=0;i<n;i++)
+	{	for(int j=0;j<n-1;j++)
+		{	if(vector[j]<vector[j+1] and vector[j]%2!=0)
+			{	aux=vector[j];
+				vector[j]=vector[j+1];
+				vector[j+1]=aux;
+			}
+		}
+	}
 }
 int main(int argc, char** argv) {
 	cout<<"Por favor poner la cantidad de elementos del vector: ";
@@ -60,12 +64,9 @@ int main(int argc, char** argv) {
 	vectorFinal=new int(n);
 	
 	llenar(vector,n);
+	ordenamiento(vector,n);
 	ordenar(vector,vectorFinal,n);
-//	mostrar(vectorFinal,n);
-	cout<<"Este el valor de j :"<<j;
 	
-	ordenamiento(vectorFinal,n);
-	cout<<endl;
 	mostrar(vectorFinal,n);
 	return 0;
 	

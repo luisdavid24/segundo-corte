@@ -28,6 +28,18 @@ void mostrar(int **matriz,int n,int m)
 		cout<<endl;
 	}
 }
+void multiplicar()
+{	cout<<"Entro en multiplicar";
+	for(int i=0;i<n1;i++)
+	{	for(int j=0;j<m2;j++)
+		{	for(int z=0;z<n2;++z)
+			{	*(*(matriz3+i)+j)+=(*(*(matriz1+i)+j))*(*(*(matriz2+i)+j));
+			}
+		}
+		
+	}
+	cout<<"Entro";
+}
 int main(int argc, char** argv) {
 	//Esta es la primera matriz
 	cout<<"Escribir el numero de filas de la matriz: ";
@@ -40,8 +52,13 @@ int main(int argc, char** argv) {
 	cout<<"Escribir el numero de columnas de la  matriz: ";
 	cin>>m2;
 	llenar(matriz2,n2,m2);
-	mostrar(matriz1,n1,m2);
 	
-
+	matriz3=new int*[n1];
+	for(int i=0;i<n1;i++)
+	{	matriz3[i]=new int[m2];
+		
+	}
+	multiplicar();
+	mostrar(matriz3,n1,m2);
 	return 0;
 }
