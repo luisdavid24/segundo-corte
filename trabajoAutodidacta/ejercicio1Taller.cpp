@@ -2,12 +2,18 @@
 int n,indice;
 int *vector;
 using namespace std;
-//void llenar(int n,int vector)
-//{	for(i=0;i<=n;i++)
-//	{	cout<<"Por favor poner el valor de la posicion "<<i<<": ";
-//		cin>>vector[i];
-//	}	
-//}
+void llenar(int *vector,int n)
+{	for(int i=0;i<n;i++)
+	{	cout<<"Valor posicion "<<i<<":";
+		cin>>vector[i];
+	}
+}
+void mostrar(int *vector,int n)
+{	for(int i=0; i<n;i++)
+	{	cout<<vector[i]<<" ";
+		
+	}
+}
 
 void ordenar(int n,int indice)
 {	int i=0,j=0,aux=0;
@@ -25,22 +31,15 @@ void ordenar(int n,int indice)
 		}
 	}
 }
+
 int main(int argc, char** argv) {
 	cout<<"Por favor poner la cantidad de elementos del vector: ";
 	cin>>n;
-	n-=1;
 	vector=new int(n);
-	//	llenar(n,vector[n]);
-	for(int i=0; i<=n;i++)
-	{	cout<<"Escribir el numero del elemento: ";
-		cin>>vector[i];
-			
-	}
-	ordenar(n,indice);
-	for(int i=0;i<=n;i++)
-	{
-		cout<<vector[i]<<" ";
-	}
+	llenar(vector,n);
+	
+//	ordenar(n,indice);
+	mostrar(vector,n);
 	return 0;
 	
 }
